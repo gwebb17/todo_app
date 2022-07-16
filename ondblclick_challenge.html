@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <p>Paragraph element utilizing dbl click event handler.</p>
+        <button type="button" ondblclick="dblclickFunction()"></button>
+        <p id="result">Result</p>
+        <script>
+            function dblclickFunction() {
+                var randy=Math.random() 
+                document.getElementById("result").innerHTML=randy;
+            }
+            
+        </script>
+
+    </body>
+</html>
