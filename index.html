@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./css/todo.css">
+        <title>What do I have to do today?</title>
+    </head>
+    <body>
+        <!--strinigfy ex-->
+        <p id="stringy"></p>
+        <hr>
+        <p id="parsy"></p>
+        <hr>
+        <p id="local"></p>
+
+        <script>
+            /*javascript dictionary object*/
+            var Mimosa={name: "Mimosa", juice: "Orange Juice", color: "Orange"};
+            /*convert json object to string*/
+            var JSONstring=JSON.stringify(Mimosa);
+            document.getElementById("stringy").innerHTML=JSONstring;
+        </script>
+
+            <!--parse method-->
+        <script>
+            var Elephant='{"name":"Jimmy", "origin": "Africa", "color":"Grey"}';
+            var parsey=JSON.parse(Elephant);
+            document.getElementById("parsy").innerHTML=parsey.name + " is an Elephant from " + parsey.origin;
+        </script>
+
+        <!--local storage method-->
+        <script>
+            // <!--sets data as key/value pair to be saved in browser-->
+            localStorage.setItem("Name", "Reggie");
+           // <!--use key "name" to return its value-->
+            document.getElementById("local").innerHTML=localStorage.getItem("Name");
+        </script>
+        <!--page container goes around everything on page and sets min height to 100% of viewport (vh). as its relative the child elements can be set with absolute position later-->
+        <div id="page-container">
+            <!--content wrap has bottom padding that is height of footer. wrapping div is used that would contain all other page content-->
+            <div id="content-wrap">
+            </div>
+        <input id="task"><button id="add">Add Item</button>
+        <div id="todos"></div>
+
+        <script src="js/todo.js"></script>
+
+        <!--footer set to absolute sitcking to the bottom:0 of page container that its in. its NOT absolute to viewport but will move down if page-container is taller than viewport.-->
+        <footer id="footer">
+            <p>Grant Webb</p><br>
+            <hr></hr>
+            &copy;Fake Company #12 2022</p>
+        </footer>
+    </div>
+            
+    </body>
+</html>
